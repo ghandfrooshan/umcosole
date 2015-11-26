@@ -11,19 +11,20 @@ angular.module('umconsole', ['ui.router'])
 					}
 				}
 			})
-			.state('definations', {
-				url: '/definations',
+			// .state('definations', {
+			// 	url: '/definations',
+			// 	views: {
+			// 		main: {
+			// 			templateUrl: 'templates/definations'
+			// 		}
+			// 	}
+			// })
+			.state('users', {
+				url: '/users',
 				views: {
 					main: {
-						templateUrl: 'templates/definations'
-					}
-				}
-			})
-			.state('definations.users', {
-				url: '/definations/users',
-				views: {
-					main: {
-						templateUrl: 'templates/definations/users'
+						templateUrl: 'templates/definations/users',
+						controller: 'userCtrl'
 					}
 				}
 			})
@@ -36,4 +37,7 @@ angular.module('umconsole', ['ui.router'])
 	})
 	.controller('headerCtrl', function ($scope) {
 
+	})
+	.controller('userCtrl', function($scope) {
+		
 	})
