@@ -1,0 +1,34 @@
+[ERR!] cwd  : d:\umconsole
+[ERR!] os   : Windows_NT 6.3.9600
+[ERR!] argv : "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\Admin\\AppData\\Roaming\\npm\\node_modules\\tsd\\build\\cli.js" "install" "mssql"
+[ERR!] node : v5.1.0
+[ERR!] tsd  : 0.6.5
+[ERR!] Error: tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:8580
+[ERR!] CODE : ECONNRESET
+[ERR!] tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:8580
+This is most likely not a problem with tsd itself
+and is related to network connectivity.
+In most cases you are behind a proxy or have bad network settings.
+
+If you are behind a proxy, please make sure that the
+'proxy' config is set properly.  See: https://github.com/DefinitelyTyped/tsd#tsdrc
+[ERR!] 
+Error: tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:8580
+    at ClientRequest.onError (C:\Users\Admin\AppData\Roaming\npm\node_modules\tsd\node_modules\tunnel-agent\index.js:174:17)
+    at ClientRequest.g (events.js:260:16)
+    at emitOne (events.js:77:13)
+    at ClientRequest.emit (events.js:169:7)
+    at Socket.socketErrorListener (_http_client.js:265:9)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at emitErrorNT (net.js:1253:8)
+    at doNTCallback2 (node.js:452:9)
+    at process._tickCallback (node.js:366:17)
+
+[ERR!] tsd.json could not be retrieved
+
+[ERR!] .tsdrc could not be retrieved
+
+[ERR!] Please include the following file with any support request:
+    d:\umconsole\tsd-debug.log
+

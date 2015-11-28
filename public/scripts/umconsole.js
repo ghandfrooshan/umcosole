@@ -38,6 +38,10 @@ angular.module('umconsole', ['ui.router'])
 	.controller('headerCtrl', function ($scope) {
 
 	})
-	.controller('userCtrl', function($scope) {
-		
+	.controller('userCtrl', function($scope, $http) {
+		$scope.users = []
+
+		$http.get('/api/Users').success(function(data){
+			$scope.users = data
+		})
 	})

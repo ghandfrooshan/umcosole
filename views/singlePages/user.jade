@@ -1,5 +1,6 @@
 div(ng-controller="userCtrl")
 	button.btn.btn-primary(data-toggle="modal",data-target="#addUser") کاربر جدید...
+	input(placeholder="جستجو...",ng-model="filterquery")
 	#addUser.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
 		.modal-dialog(role='document')
 			.modal-content
@@ -44,7 +45,7 @@ div(ng-controller="userCtrl")
 				th Computer Name
 				th 
 		tbody
-			tr(ng-repeat="user in users")
+			tr(ng-repeat="user in users | filter: filterquery")
 				td {{$index}}
 				td {{user.UserId}}
 				td {{user.FullName}}
