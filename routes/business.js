@@ -20,8 +20,6 @@ router.get('/Users', function (req, res) {
  
 			res.send(recordset)
 		});
-
-
 	});
 })
 
