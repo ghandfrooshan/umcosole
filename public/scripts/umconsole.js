@@ -55,5 +55,24 @@ angular.module('umconsole', ['ui.router'])
 		})
 	})
 	.controller('userInProgramCtrl', function ($scope) {
-
+		$scope.Programs=[
+			{
+				ProgramId:1,
+				FarsiName:"مدیریت کاربران و برنامه ها"
+			},
+			{
+				ProgramId:2,
+				FarsiName:"مدیریت آزمایشگاه"
+			},
+			{
+				ProgramId:3,
+				FarsiName:"سیستم نظارت تردد پرسنل بخش ها"
+			},
+			{
+				ProgramId:4,
+				FarsiName:"سیستم بهای تمام شده"
+			}
+		];
+		$scope.ProgramId=-1;
+		
 	})
