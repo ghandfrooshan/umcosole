@@ -28,6 +28,15 @@ angular.module('umconsole', ['ui.router'])
 					}
 				}
 			})
+			.state('userInProgram', {
+				url: '/userInProgram',
+				views: {
+					main: {
+						templateUrl: 'templates/definations/userInProgram',
+						controller: 'userInProgramCtrl'
+					}
+				}
+			})
 
 		$locationProvider.html5Mode(true);
 	})
@@ -44,4 +53,7 @@ angular.module('umconsole', ['ui.router'])
 		$http.get('/api/Users').success(function(data){
 			$scope.users = data
 		})
+	})
+	.controller('userInProgramCtrl', function ($scope) {
+
 	})

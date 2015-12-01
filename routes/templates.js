@@ -10,5 +10,8 @@ router.get('/definations', function(req,res){
 router.get('/definations/users', function(req,res){
 	res.render('singlePages/user')
 })
+router.get('/definations/userInProgram', function(req,res){
+	res.render('linking/userInProgram')
+})
 
 module.exports = router;
