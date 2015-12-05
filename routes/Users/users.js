@@ -1,23 +1,42 @@
 var express = require('express');
 var router = express.Router();
-var sql = require('mssql');
 
-var config = {
-    user: 'Nodejs',
-    password: '123',
-    server: 'frosh', // You can use 'localhost\\instance' to connect to named instance 
-    database: 'UM',
-}
+var DAL = require('../../modules/DAL.js')
 
 router.get('/', function (req, res) {
-	var connection = new sql.Connection(config, function (err) {
-		// ... error checks 
-		var request = new sql.Request(connection); // or: var request = connection.request(); 
-		request.query('SELECT * FROM Users', function (err, recordset) {
-			// ... error checks 
-			res.send(recordset)
-		});
-	});
+	DAL('uspGetUsers', null, function (err, records) {
+		res.send(records.Users);
+	})
+
+})
+
+router.post('/Add', function (req, res) {
+	DAL('spAddUser', req.body, function (err, recs) {
+		if (!err)
+			res.send('ok')
+		else
+			res.send(err)
+	})
+})
+
+router.post('/Edit', function (req, res) {
+	res.send('ok')
+	// DAL('spEditUser', req.body, function (err, recs) {
+	// 	if (!err)
+	// 		res.send('ok')
+	// 	else
+	// 		res.send(err)
+	// })
+})
+
+router.use('/Delete', function (req, res) {
+	res.send('ok')
+	// DAL('spDeleteUser', req.body, function (err, recs) {
+	// 	if (!err)
+	// 		res.send('ok')
+	// 	else
+	// 		res.send(err)
+	// })
 })
 
 module.exports = router;

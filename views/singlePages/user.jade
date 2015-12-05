@@ -30,10 +30,10 @@ div(ng-controller="userCtrl")
 							input.form-control#ComputerName(type="text",name="ComputerName",placeholder="Computer Name...")
 						.form-group
 							label(for="Sign") امضا
-							input.form-control#Sign(type="file")
+							input.form-control#Sign(type="file" name="Sign")
 				.modal-footer
 					button.btn.btn-default(type='button', data-dismiss='modal') انصراف
-					button.btn.btn-primary(type='button',ng-click="registerUser()") ذخیره
+					button.btn.btn-primary(type='button',ng-click="registerUser()") {{isEditing ? 'ویرایش' : 'اضافه کردن'}}
 					
 	table#usersGrid.table.table-hover(style="margin-top:25px;")
 		thead
@@ -54,5 +54,5 @@ div(ng-controller="userCtrl")
 				td
 					a(href="#",data-toggle="modal",data-target="#addUser",ng-click="edit(user)")
 						i.fa.fa-pencil
-					a(href="#")
+					a(href="#",ng-click="delete(user)")
 						i.fa.fa-trash
